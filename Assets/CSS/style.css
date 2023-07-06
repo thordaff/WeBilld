@@ -1,0 +1,32 @@
+.rectangle
+{
+    position: relative;
+    left: -8em;
+    background: #850000;
+    width: 20em;
+    height: 10px;
+}
+.rectangle #beranda
+{
+
+}
+.rectangle #riwayat
+{
+    
+}
+/* Section Beranda */
+section.beranda .content-1{
+    
+}
+section.beranda .button-content-1
+{
+    width: 10em;
+    background-color: #850000;
+    text-align: center;
+}
+section.beranda .button-content-1 a
+{
+    color: #F9F9F9;
+}
+
+/* Section Riwayat */
