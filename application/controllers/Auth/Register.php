@@ -31,8 +31,27 @@ class Register extends CI_Controller {
 				'role_id'=> '1',
             ]; 
             $this->Auth->RegisterData($data);
-            $this->session->set_flashdata('message', '<div class="flashMessage">
-            Akun Berhasil Dibuat. Silahkan Login</div>');
+            $this->session->set_flashdata('message', 
+			'
+				<div class="popUp" id="popup">
+					<div class="d-flex flex-column">
+						<div class="d-flex flex-row popUp-header">
+							<div class="d-flex flex-row popUp-header-content"style="width: 100%;margin-bottom:-10px;">
+								<div class="left-side d-flex flex-row p-2">
+									<div class="iconNotif" style="background: Green;"></div>
+									<p class="fw-bold ms-2 small">WeBilld</p>
+								</div>
+								<div class="right-side ms-auto p-2">
+									<p class="small">Baru Saja</p>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex p-2">
+							<p class="small">Berhasil membuat akun. Silahkan login</p>
+						</div>
+					</div>
+				</div>
+			');
             redirect('Auth/login');
         }
 	}

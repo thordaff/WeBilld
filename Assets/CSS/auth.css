@@ -1,0 +1,63 @@
+/* Content Body Auth */
+.auth-body .auth-content input
+{
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.auth-body .img
+{
+    background: url('../IMG/auth.png') no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    width: 75em;
+}
+.content
+{
+    margin-top: 2em;
+}
+
+.button-auth .auth
+{
+    color: white;
+    background-color: #850000;
+
+    width: 25em;
+    border-radius: 20px;
+}
+.button-footer a
+{
+    border: 1px solid black;
+    border-radius: 20px;
+
+    margin: 10px 0px;
+    width: 25em;
+}
+
+/* Modal Popup */
+.flash-message {
+    position: fixed;
+    top:15px;
+    left: 15px;
+    width: 30em;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    transition: opacity 0.5s;
+  }
+.popUp.show {
+    height: 100px;
+}
+.popUp-content {
+    display: flex;
+    flex-direction: column;
+}
+.popUp-header
+{
+    border-bottom: 1px solid black;
+}
+.popUp-header .popUp-header-content .left-side .iconNotif
+{
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    border-radius: 50%;
+}

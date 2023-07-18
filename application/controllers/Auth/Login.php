@@ -17,8 +17,8 @@ class Login extends CI_Controller {
 
 		if($this->form_validation->run() == FALSE)
         {
-			$data['title'] = 'GoedangAntique - Masuk';
-			$this->load->view('Auth/login');
+			$data['pageTitle'] = 'WeBilld - Masuk';
+			$this->load->view('Auth/login', $data);
         }
         else
         {
@@ -44,27 +44,104 @@ class Login extends CI_Controller {
 				$this->session->set_userdata($data);
 				if($user['role_id'] == 1)
 				{
-					$this->session->set_flashdata('message', '<div class="flashMessage fw-bold">
-					Berhasil Masuk ke Akun</div>');
+					$this->session->set_flashdata('message', 
+					'        
+					<div class="popUp" id="popup">
+						<div class="d-flex flex-column">
+							<div class="d-flex flex-row popUp-header">
+								<div class="d-flex flex-row popUp-header-content"style="width: 100%;margin-bottom:-10px;">
+									<div class="left-side d-flex flex-row p-2">
+										<div class="iconNotif" style="background: green;"></div>
+										<p class="fw-bold ms-2 small">WeBilld</p>
+									</div>
+									<div class="right-side ms-auto p-2">
+										<p class="small">Baru Saja</p>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex p-2">
+								<p class="small">Berhasil Masuk. Selamat Datang</p>
+							</div>
+						</div>
+					</div>
+				');
 					redirect('');
 				}
 				else
 				{
-					$this->session->set_flashdata('message', '<div class="flashMessage fw-bold">
-					Berhasil Masuk ke Akun</div>');
+					$this->session->set_flashdata('message', 
+					'
+						<div class="popUp" id="popup">
+							<div class="d-flex flex-column">
+								<div class="d-flex flex-row popUp-header">
+									<div class="d-flex flex-row popUp-header-content"style="width: 100%;margin-bottom:-10px;">
+										<div class="left-side d-flex flex-row p-2">
+											<div class="iconNotif" style="background: green;"></div>
+											<p class="fw-bold ms-2 small">WeBilld</p>
+										</div>
+										<div class="right-side ms-auto p-2">
+											<p class="small">Baru Saja</p>
+										</div>
+									</div>
+								</div>
+								<div class="d-flex p-2">
+									<p class="small">Berhasil Masuk. Selamat Datang</p>
+								</div>
+							</div>
+						</div>
+					');
 					redirect('Admin/Dashboard');
 				}
 			}
 			else
 			{                    
-				$this->session->set_flashdata('message', '<div class="flashMessage fw-bold">
-				Password Anda Salah </div>');
+				$this->session->set_flashdata('message', 
+				'
+					<div class="popUp" id="popup">
+						<div class="popUp-content">
+							<div class="d-flex flex-row popUp-header">
+								<div class="d-flex flex-row popUp-header-content" style="width: 100%; margin-bottom: -10px;">
+								<div class="left-side d-flex flex-row p-2">
+									<div class="iconNotif" style="background: Red;"></div>
+									<p class="fw-bold ms-2 small">WeBilld</p>
+								</div>
+								<div class="right-side ms-auto p-2">
+									<p class="small">Baru Saja</p>
+								</div>
+								</div>
+							</div>
+							<div class="d-flex p-2">
+								<p class="small">Password kamu salah. Coba lagi</p>
+							</div>
+						</div>
+					</div>
+				');
 				redirect('Login');
 			}
 		}
 		else
 		{
-			$this->session->set_flashdata('message', '<div class="flashMessage fw-bold">Email Belum Terdaftar</div>');
+			$this->session->set_flashdata('message', 
+			'
+				<div class="popUp" id="popup">
+					<div class="d-flex flex-column">
+						<div class="d-flex flex-row popUp-header">
+							<div class="d-flex flex-row popUp-header-content"style="width: 100%;margin-bottom:-10px;">
+								<div class="left-side d-flex flex-row p-2">
+									<div class="iconNotif" style="background: red;"></div>
+									<p class="fw-bold ms-2 small">WeBilld</p>
+								</div>
+								<div class="right-side ms-auto p-2">
+									<p class="small">Baru Saja</p>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex p-2">
+							<p class="small">Email kamu belum terdaftar. Lakukan register jika diperlukan</p>
+						</div>
+					</div>
+				</div>
+			');
             redirect('Login');
 		}
 	}
